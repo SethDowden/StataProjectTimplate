@@ -1,0 +1,8 @@
+stata/data/*
+docs/tex/**/*.aux
+docs/tex/**/*.fdb_latexmk
+docs/tex/**/*.fls
+docs/tex/**/*.log
+docs/tex/**/*.synctex.gz
+venv
+.DS_Store

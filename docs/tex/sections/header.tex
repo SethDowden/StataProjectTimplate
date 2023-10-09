@@ -1,0 +1,71 @@
+% !TEX root = ../main.tex
+% ----------- PAGE LAYOUT & MARGINS -----------
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\linespread{1.1}
+\setlength\parindent{0pt}
+\pgfplotsset{compat=1.18} 
+
+% ----------- HEADER & FOOTER SETTINGS -----------
+\pagestyle{fancy}
+\lhead{\hwAuthorName}
+\chead{\hwTitle:\ \hwSubtitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+
+% ----------- PROBLEM SECTIONS & ENVIRONMENTS -----------
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{equation}{0}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+% ----------- TITLE PAGE -----------
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hwTitle \\ \hwSubtitle}}\\
+    \normalsize\vspace{0.1in}\small{\hwDate\ }\\
+    \vspace{3in}
+}
+\author{\textbf{\hwAuthorName}}
+\date{}
+
+\makeatletter
+\renewcommand{\maketitle}{
+  \@maketitle
+  \thispagestyle{empty}
+  \clearpage
+  \pagenumbering{arabic}
+}
+\makeatother

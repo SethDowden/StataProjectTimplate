@@ -1,0 +1,5 @@
+stata_setup
+ipython
+pandas
+numpy
+requests
