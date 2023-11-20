@@ -3,6 +3,10 @@ docs/tex/**/*.aux
 docs/tex/**/*.fdb_latexmk
 docs/tex/**/*.fls
 docs/tex/**/*.log
+docs/tex/**/*.blg
+docs/tex/**/*.bbl
+docs/tex/**/*.bcf
+docs/tex/**/*.xml
 docs/tex/**/*.synctex.gz
 venv
 .DS_Store
